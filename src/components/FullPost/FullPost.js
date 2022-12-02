@@ -19,6 +19,9 @@ class FullPost extends Component {
             // so in order to stop multiple request , we give a condition that if loaded post is null then send the request, otherwise
             // if loadedpost is not null , then I want to see that we are not requesting for the data for the same id , which is already in loaded 
             // post
+
+
+            // here I am getting post of a particular userid
             axios.get('https://jsonplaceholder.typicode.com/posts/'+this.props.id).then((response)=>{
         this.setState({
               loadedPosts:response.data
@@ -47,7 +50,7 @@ class FullPost extends Component {
             post = (
                 <div className="FullPost">
                     <h1>{this.state.loadedPosts.title}</h1>
-                    <p>Content</p>
+                    <p>{this.state.loadedPosts.body}</p>
                     <div className="Edit">
                         <button className="Delete" onClick={this.deletePostHandler}>Delete</button>
                     </div>
