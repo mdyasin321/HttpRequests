@@ -12,6 +12,8 @@ class Blog extends Component {
         postsId:null
         // ans_item:{}
     }
+
+    
     componentDidMount(){
         axios.get('https://jsonplaceholder.typicode.com/posts').then((response)=>{
               
@@ -19,6 +21,7 @@ class Blog extends Component {
              const updatedPosts=post.map((element)=>{
                 return {
                     ...element,
+                    // here it is the copy of element object 
                     author:'Yasin'
                 }
              })
