@@ -83,11 +83,15 @@ class Blog extends Component {
     }
         return (
             <div>
+                    <div><Link to="/Post">Post</Link></div>
+                    
+                    <div> <Link to="/newPost">New Post</Link></div>
                 <section className="Posts">
+
                     {/* {post} */}
                     <Routes>
                         {/* route should always be wrapped by routes */}
-                    <Route path='/' exact element={post}></Route>
+                    <Route path='/Post' exact element={post}></Route>
                     <Route path='/newPost' exact element={<NewPost></NewPost>}></Route>
                     </Routes>
                 </section>
