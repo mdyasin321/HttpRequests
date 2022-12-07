@@ -5,6 +5,7 @@ import FullPost from '../../components/FullPost/FullPost';
 import NewPost from '../../components/NewPost/NewPost';
 import './Blog.css';
 import axios from 'axios';
+import {Routes, Route,Link} from 'react-router-dom';
 
 class Blog extends Component {
     state={
@@ -83,15 +84,20 @@ class Blog extends Component {
         return (
             <div>
                 <section className="Posts">
-                    {post}
+                    {/* {post} */}
+                    <Routes>
+                        {/* route should always be wrapped by routes */}
+                    <Route path='/' exact element={post}></Route>
+                    <Route path='/newPost' exact element={<NewPost></NewPost>}></Route>
+                    </Routes>
                 </section>
-                <section>
-                    {/* <FullPost title={this.state.ans_item.title} /> */}
+                {/* <section>
+                    <FullPost title={this.state.ans_item.title} />
                       <FullPost id={this.state.postsId} />
                 </section>
                 <section>
                     <NewPost />
-                </section>
+                </section> */}
             </div>
         );
     }
